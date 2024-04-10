@@ -1,7 +1,7 @@
 const { app } = require('../..');
 const { mysqlConnection } = require('../../mysql_con');
 
-function getLogin() {
+function GetLogin() {
    app.get('/login', (req, res) => {
       const { login, senha } = req.headers;
 
@@ -34,4 +34,4 @@ function getLogin() {
    });
 }
 
-exports.getLogin = getLogin;
+exports.GetLogin = GetLogin;
