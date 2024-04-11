@@ -3,9 +3,6 @@ const app = express();
 exports.app = app;
 require('dotenv').config();
 
-const { mysqlConnection } = require('./mysql_con');
-mysqlConnection(); // instancia o Mysql
-
 const cors = require('cors');
 app.use(cors()); // Habilita o CORS para todas as rotas
 

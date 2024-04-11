@@ -29,6 +29,9 @@ function PostCategorias() {
             res.status(201).json({ id: insertedId, nome_categoria });
          },
       );
+
+      // Fechando a conexão com o MySQL
+      con.end();
    });
 }
 

@@ -31,6 +31,8 @@ function GetLogin() {
             }
          },
       );
+      // Fechando a conexão com o MySQL
+      con.end();
    });
 }
 

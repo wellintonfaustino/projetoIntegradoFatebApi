@@ -18,6 +18,8 @@ function GetCategorias() {
             res.json(results);
          },
       );
+      // Fechando a conexão com o MySQL
+      con.end();
    });
 }
 

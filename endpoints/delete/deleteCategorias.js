@@ -25,6 +25,9 @@ function DeleteCategoria() {
             }
 
             res.json({ message: 'Categoria excluída com sucesso.' });
+
+            // Fechando a conexão com o MySQL
+            con.end();
          },
       );
    });
