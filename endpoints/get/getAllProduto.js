@@ -1,7 +1,7 @@
 const { app } = require('../..');
 const { mysqlConnection } = require('../../mysql_con');
 
-function GetProdutos() {
+function GetTodosProdutos() {
    app.get('/produtos', (req, res) => {
       const con = mysqlConnection();
 
@@ -20,4 +20,4 @@ function GetProdutos() {
    });
 }
 
-exports.GetProdutos = GetProdutos;
+exports.GetTodosProdutos = GetTodosProdutos;

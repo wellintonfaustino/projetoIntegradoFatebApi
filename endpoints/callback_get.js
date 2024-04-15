@@ -1,11 +1,11 @@
-const { GetCategorias } = require('./get/getCategoria');
+const { GetTodasCategorias } = require('./get/getAllCategoria');
 const { GetLogin } = require('./get/getLogin');
-const { GetProdutos } = require('./get/getProduto');
+const { GetTodosProdutos } = require('./get/getAllProduto');
 
 function CallbackGet() {
    GetLogin();
-   GetCategorias();
-   GetProdutos();
+   GetTodasCategorias();
+   GetTodosProdutos();
 }
 
 module.exports = { CallbackGet };

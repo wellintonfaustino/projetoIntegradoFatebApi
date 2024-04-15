@@ -5,7 +5,7 @@ function mysqlConnection() {
       host: process.env.MYSQL_ADDRESS_DB,
       user: process.env.MYSQL_ADMIN_USER,
       password: process.env.MYSQL_ADMIN_PASSWORD,
-      database: 'projetointegrado',
+      database: 'a',
    });
 
    return con;

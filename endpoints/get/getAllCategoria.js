@@ -1,7 +1,7 @@
 const { app } = require('../..');
 const { mysqlConnection } = require('../../mysql_con');
 
-function GetCategorias() {
+function GetTodasCategorias() {
    app.get('/categorias', (req, res) => {
       const con = mysqlConnection();
 
@@ -23,4 +23,4 @@ function GetCategorias() {
    });
 }
 
-exports.GetCategorias = GetCategorias;
+exports.GetTodasCategorias = GetTodasCategorias;

@@ -1,4 +1,4 @@
-const PutProduto = require('./put/postProduto');
+const PutProduto = require('./put/putProdutos');
 const PutCategoria = require('./put/putCategorias');
 
 function CallbackPut() {

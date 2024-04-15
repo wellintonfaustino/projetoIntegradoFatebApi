@@ -3,26 +3,26 @@ const { mysqlConnection } = require('../../mysql_con');
 
 function PostProdutos() {
    app.post('/produtos', (req, res) => {
-      const { nome_produto, id_categoria } = req.headers;
+      const { nome_produto, id_categoria, id_fornecedor, preco } = req.headers;
 
       if (!nome_produto && !id_categoria) {
          return res
             .status(400)
-            .json({ error: 'É necessário fornecer um nome para a categoria.' });
+            .json({ error: 'É necessário todos os campos para cadastrar.' });
       }
 
       const con = mysqlConnection();
 
       con.query(
-         `INSERT INTO produto
-         (nome_produto, id_categoria)
-         VALUES( ? , ? ) `,
-         [nome_produto, id_categoria],
+         `INSERT INTO produto 
+         (nome_produto, id_categoria, id_fornecedor, preco)
+         VALUES( ? , ? , ? , ? ) `,
+         [nome_produto, id_categoria, id_fornecedor, preco],
          (error, results) => {
             if (error) {
                console.error('Erro ao executar consulta:', error);
                return res.status(500).json({
-                  error: 'Ocorreu um erro ao tentar criar a categoria.',
+                  error: 'Ocorreu um erro ao tentar criar o produto.',
                });
             }
 
