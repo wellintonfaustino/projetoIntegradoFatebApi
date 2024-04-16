@@ -1,11 +1,20 @@
 const { app } = require('../..');
 const { mysqlConnection } = require('../../mysql_con');
 
-function PutCategoria() {
-   app.put('/categorias', (req, res) => {
-      const { id, nome_categoria } = req.headers;
+function PutFornecedores() {
+   app.put('/fornecedores', (req, res) => {
+      const { id, cnpj, email, endereco, ie, nome_fornecedor, telefone } =
+         req.headers;
 
-      if (!nome_categoria) {
+      if (
+         !cnpj &&
+         !email &&
+         !endereco &&
+         !ie &&
+         !nome_fornecedor &&
+         !telefone &&
+         !id
+      ) {
          return res
             .status(400)
             .json({ error: 'É necessário fornecer um nome para a categoria.' });
@@ -14,8 +23,10 @@ function PutCategoria() {
       const con = mysqlConnection();
 
       con.query(
-         'UPDATE categoria SET nome_categoria = ? WHERE id = ?',
-         [nome_categoria, id],
+         `UPDATE fornecedor
+         SET cnpj=?, email=?, endereco=?, ie=?, nome_fornecedor=?, telefone=?
+         WHERE id_fornecedor=?;`,
+         [cnpj, email, endereco, ie, nome_fornecedor, telefone, id],
          (error, results) => {
             if (error) {
                console.error('Erro ao executar consulta:', error);
@@ -27,10 +38,10 @@ function PutCategoria() {
             if (results.affectedRows === 0) {
                return res
                   .status(404)
-                  .json({ error: 'Categoria não encontrada.' });
+                  .json({ error: 'fornecedor não encontrado.' });
             }
 
-            res.json({ message: 'Categoria atualizada com sucesso.' });
+            res.json({ message: 'fornecedor atualizado com sucesso.' });
          },
       );
       // Fechando a conexão com o MySQL
@@ -38,4 +49,4 @@ function PutCategoria() {
    });
 }
 
-module.exports = PutCategoria;
+module.exports = PutFornecedores;
