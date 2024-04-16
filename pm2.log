@@ -1,0 +1,8 @@
+[PM2] Starting D:\Estudos\Fateb\Projeto Integrado\api\index.js in fork_mode (1 instance)
+[PM2] Done.
+┌────┬──────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name     │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼──────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ index    │ default     │ 1.0.0   │ fork    │ 59396    │ 0s     │ 0    │ online    │ 6.2%     │ 39.2mb   │ wellint… │ disabled │
+└────┴──────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+[PM2][WARN] Current process list is not synchronized with saved list. Type 'pm2 save' to synchronize.

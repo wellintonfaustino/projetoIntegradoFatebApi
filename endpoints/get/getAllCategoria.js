@@ -6,7 +6,14 @@ function GetTodasCategorias() {
       const con = mysqlConnection();
 
       con.query(
-         'SELECT id, nome_categoria FROM categoria',
+         `select categoria.id 
+         , categoria.nome_categoria 
+         , count(produto.id)  qnt_produtos
+      from categoria
+      left join produto
+        on produto.id_categoria  = categoria.id
+     group by categoria.id 
+         , categoria.nome_categoria `,
          (error, results) => {
             if (error) {
                console.error('Erro ao executar consulta:', error);
