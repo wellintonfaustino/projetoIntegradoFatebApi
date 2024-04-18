@@ -3,6 +3,7 @@ const { GetLogin } = require('./get/getLogin');
 const { GetTodosProdutos } = require('./get/getAllProduto');
 const { GetTodosFornecedores } = require('./get/getAllFornecedores');
 const { GetTodasCidades } = require('./get/getAllCidades');
+const { GetTodasEmpresas } = require('./get/getAllEmpresas');
 
 function CallbackGet() {
    GetLogin();
@@ -10,6 +11,7 @@ function CallbackGet() {
    GetTodosProdutos();
    GetTodosFornecedores();
    GetTodasCidades();
+   GetTodasEmpresas();
 }
 
 module.exports = { CallbackGet };
