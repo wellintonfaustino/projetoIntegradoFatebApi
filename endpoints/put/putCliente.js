@@ -41,6 +41,7 @@ function PutClientes() {
          values.push(id_cidade);
       }
 
+      console.log(query);
       // Remover a última vírgula da consulta SQL
       query = query.slice(0, -1);
 
