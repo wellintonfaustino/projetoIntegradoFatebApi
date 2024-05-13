@@ -1,4 +1,5 @@
 const PostClientes = require('./post/PostCliente');
+const PostClientesTelefone = require('./post/PostClienteTelefone');
 const PostCategorias = require('./post/postCategorias');
 const PostCidades = require('./post/postCidades');
 const PostEmpresas = require('./post/postEmpresas');
@@ -13,7 +14,8 @@ function CallbackPost() {
    PostCidades();
    PostEmpresas();
    PostClientes();
-   PutClientes();
+   PostClientes();
+   PostClientesTelefone();
 }
 
 module.exports = { CallbackPost };
