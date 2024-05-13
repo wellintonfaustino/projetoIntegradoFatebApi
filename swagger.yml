@@ -1,0 +1,640 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Projeto Integrado
+servers:
+  - url: http://localhost:1024
+tags:
+  - name: sistema
+    description: Crud sistema
+  - name: categorias
+    description: Crud Categorias
+  - name: cidades
+    description: Crud Cidades
+  - name: fornecedores
+    description: Crud Fornecedores
+  - name: empresa
+    description: Crud Empresas
+  - name: produtos
+    description: Crud Produtos
+paths:
+  /login:
+    get:
+      tags:
+          - sistema
+      summary: Efetua a autenticação do usuário no sistema.
+      parameters:
+        - name: login
+          in: header
+          description: login
+          required: false
+          schema:
+            type: string
+          example: admin
+        - name: senha
+          in: header
+          description: senha
+          required: false
+          schema:
+            type: string
+          example: wellinton
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+  /categorias:
+    get:
+      tags:
+          - categorias
+      summary: Get Todas Categorias
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    post:
+      tags:
+          - categorias
+      summary: Cria uma nova categoria
+      parameters:
+        - in: header
+          name: nome_categoria
+          required: true
+          schema:
+            type: string
+          description: Nome da categoria a ser criada.
+          example: "Categoria X"
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    put:
+      tags:
+          - categorias
+      summary: Put Categorias
+      parameters:
+        - name: id
+          in: header
+          description: ID da categoria
+          required: true
+          schema:
+            type: integer
+        - name: nome_categoria
+          in: header
+          description: Novo nome da categoria
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    delete:
+      tags:
+          - categorias
+      summary: Delete Categorias
+      parameters:
+        - name: id
+          in: header
+          description: ID a ser deletado
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+  /cidades:
+    get:
+      tags:
+            - cidades
+      summary: Get Todas Cidades
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    post:
+      summary: Post Cidades
+      tags:
+            - cidades
+      parameters:
+        - in: header
+          name: nome_cidade
+          required: true
+          schema:
+            type: string
+          description: Nome da cidade a ser criada.
+          example: "Cidade X"
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    put:
+      tags:
+            - cidades
+      summary: Put Cidades
+      parameters:
+        - name: id
+          in: header
+          description: ID da cidade
+          required: true
+          schema:
+            type: integer
+        - name: nome_cidade
+          in: header
+          description: Novo nome da cidade
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    delete:
+      tags: 
+            - cidades
+      summary: Delete Cidades
+      parameters:
+        - name: id
+          in: header
+          description: ID a ser deletado
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+  /fornecedores:
+    get:
+      tags:
+            - fornecedores
+      summary: Get Todos Fornecedores
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    post:
+      tags:
+            - fornecedores
+      summary: Post Fornecedores
+      parameters:
+        - name: nome
+          in: header
+          description: Nome do Fornecedor
+          required: true
+          schema:
+            type: string
+        - name: cnpj
+          in: header
+          description: CNPJ do fornecedor
+          required: true
+          schema:
+            type: integer
+        - name: email
+          in: header
+          description: Email do fornecedor
+          required: true
+          schema:
+            type: string
+        - name: endereco
+          in: header
+          description: Endereço do fornecedor
+          required: true
+          schema:
+            type: integer
+        - name: ie
+          in: header
+          description: Inscrição Estadual do fornecedor
+          required: true
+          schema:
+            type: integer
+        - name: telefone
+          in: header
+          description: Telefone do fornecedor
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    put:
+      tags:
+            - fornecedores
+      summary: Put Fornecedores
+      parameters:
+        - name: id
+          in: header
+          description: ID do fornecedor
+          required: true
+          schema:
+            type: integer
+        - name: cnpj
+          in: header
+          description: CNPJ do fornecedor
+          schema:
+            type: integer
+        - name: email
+          in: header
+          description: Email do fornecedor
+          schema:
+            type: string
+        - name: endereco
+          in: header
+          description: Endereço do fornecedor
+          schema:
+            type: string
+        - name: ie
+          in: header
+          description: Inscrição Estadual do fornecedor
+          schema:
+            type: integer
+        - name: telefone
+          in: header
+          description: Telefone do fornecedor
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    delete:
+      tags:
+            - fornecedores
+      summary: Delete Fornecedores
+      parameters:
+        - name: id
+          in: header
+          description: ID a ser deletado
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+  /empresas:
+    get:
+      tags:
+          - empresa
+      summary: Get Todas Empresas
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    post:
+      tags:
+          - empresa
+      summary: Post Empresas
+      parameters:
+        - name: cnpj
+          in: header
+          description: CNPJ da empresa
+          required: true
+          schema:
+            type: string
+        - name: nome_fantasia
+          in: header
+          description: Nome fantasia da empresa
+          required: true
+          schema:
+            type: string
+        - name: razao_social
+          in: header
+          description: Razão social da empresa
+          required: true
+          schema:
+            type: string
+        - name: email
+          in: header
+          description: Email da empresa
+          required: true
+          schema:
+            type: string
+        - name: endereco
+          in: header
+          description: Endereço da empresa
+          required: true
+          schema:
+            type: string
+        - name: ie
+          in: header
+          description: Inscrição Estadual da empresa
+          required: true
+          schema:
+            type: string
+        - name: id_cidade
+          in: header
+          description: ID da cidade da empresa
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    put:
+      tags:
+          - empresa
+      summary: Put Empresa
+      parameters:
+        - name: id
+          in: header
+          description: ID da empresa
+          required: true
+          schema:
+            type: string
+        - name: cnpj
+          in: header
+          description: CNPJ da empresa
+          schema:
+            type: string
+        - name: nome_fantasia
+          in: header
+          description: Nome fantasia da empresa
+          schema:
+            type: string
+        - name: razao_social
+          in: header
+          description: Razão social da empresa
+          schema:
+            type: string
+        - name: email
+          in: header
+          description: Email da empresa
+          schema:
+            type: string
+        - name: endereco
+          in: header
+          description: Endereço da empresa
+          schema:
+            type: string
+        - name: ie
+          in: header
+          description: Inscrição Estadual da empresa
+          schema:
+            type: string
+        - name: id_cidade
+          in: header
+          description: ID da cidade da empresa
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    delete:
+      tags:
+          - empresa
+      summary: Delete Empresas
+      parameters:
+        - name: id
+          in: header
+          description: ID a ser deletado
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+  /produtos:
+    get:
+      tags:
+          - produtos
+      summary: Get Todos Produtos
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    post:
+      tags:
+          - produtos
+      summary: Post Produtos
+      parameters:
+        - name: nome_produto
+          in: header
+          description: Novo nome do produto
+          required: true
+          schema:
+            type: string
+        - name: id_categoria
+          in: header
+          description: ID da categoria do produto
+          required: true
+          schema:
+            type: string
+        - name: id_fornecedor
+          in: header
+          description: ID do fornecedor do produto
+          required: true
+          schema:
+            type: string
+        - name: preco
+          in: header
+          description: Preço do produto
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    put:
+      tags:
+          - produtos
+      summary: Put Produtos
+      parameters:
+        - name: id
+          in: header
+          description: ID do produto
+          required: true
+          schema:
+            type: string
+        - name: nome_produto
+          in: header
+          description: Novo nome do produto
+          schema:
+            type: string
+        - name: id_categoria
+          in: header
+          description: ID da categoria do produto
+          schema:
+            type: string
+        - name: id_fornecedor
+          in: header
+          description: ID do fornecedor do produto
+          schema:
+            type: string
+        - name: preco
+          in: header
+          description: Preço do produto
+          schema:
+            type: number
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+    delete:
+      tags:
+          - produtos
+      summary: Delete Produtos
+      parameters:
+        - name: id
+          in: header
+          description: ID a ser deletado
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request. User ID must be an integer and larger than 0.
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A user with the specified ID was not found.
+        '5XX':
+          description: Unexpected error.
+  

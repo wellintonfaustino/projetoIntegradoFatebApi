@@ -16,5 +16,10 @@ CallbackDelete();
 CallbackPost();
 CallbackPut();
 
+const swaggerConfig = require('./../api/swaggerConfig');
+
+// Configuração do Swagger
+swaggerConfig(app);
+
 app.use(express.json());
 app.listen(1024, () => console.log('O servidor está Online'));

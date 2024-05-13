@@ -1,0 +1,485 @@
+{
+   "swagger": "2.0",
+   "info": {
+      "version": "1.0.0",
+      "title": "Projeto Integrado"
+   },
+   "host": "localhost:1024",
+   "basePath": "/",
+   "schemes": ["http"],
+   "paths": {
+      "/categorias": {
+         "get": {
+            "summary": "Get Todas Categorias",
+            "responses": {}
+         },
+         "post": {
+            "summary": "Post Categorias",
+            "parameters": [
+               {
+                  "name": "nome_categoria",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         },
+         "put": {
+            "summary": "Put Categorias",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "nome_categoria",
+                  "in": "header",
+                  "description": "varchar(100) - Novo nome",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         },
+         "delete": {
+            "summary": "Delete Categorias",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "header",
+                  "description": "ID a ser deletado",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         }
+      },
+      "/cidades": {
+         "get": {
+            "summary": "Get Todas Cidades",
+            "responses": {}
+         },
+         "post": {
+            "summary": "Post Cidades",
+            "parameters": [
+               {
+                  "name": "nome_cidade",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         },
+         "put": {
+            "summary": "Put Cidades",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "nome_cidade",
+                  "in": "header",
+                  "description": "varchar(100) - Novo nome",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         },
+         "delete": {
+            "summary": "Delete Categorias",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "header",
+                  "description": "ID a ser deletado",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         }
+      },
+      "/fornecedores": {
+         "get": {
+            "summary": "Get Todos Fornecedores",
+            "responses": {}
+         },
+         "post": {
+            "summary": "Post Produtos",
+            "parameters": [
+               {
+                  "name": "cnpj",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "email",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "endereco",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "ie",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "telefone",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         },
+         "put": {
+            "summary": "Put Produtos",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "nome_fornecedor",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "cnpj",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "email",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "endereco",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "ie",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "telefone",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         },
+         "delete": {
+            "summary": "Delete Fornedores",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "header",
+                  "description": "ID a ser deletado",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         }
+      },
+      "/empresas": {
+         "get": {
+            "summary": "Get Todas Empresas",
+            "responses": {}
+         },
+         "post": {
+            "summary": "Post Empresas",
+            "parameters": [
+               {
+                  "name": "cnpj",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "nome_fantasia",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "razao_social",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "email",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "endereco",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "ie",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "id_cidade",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         },
+         "put": {
+            "summary": "Put Empresa",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "cnpj",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "nome_fantasia",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "razao_social",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "email",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "endereco",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "ie",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "id_cidade",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         },
+         "delete": {
+            "summary": "Delete Fornecedores",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "header",
+                  "description": "ID a ser deletado",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         }
+      },
+      "/produtos": {
+         "get": {
+            "summary": "Get Todos Produtos",
+            "responses": {}
+         },
+         "post": {
+            "summary": "Post Produtos",
+            "parameters": [
+               {
+                  "name": "nome_produto",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "id_categoria",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "id_fornecedor",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "preco",
+                  "in": "header",
+                  "description": "float",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         },
+         "put": {
+            "summary": "Put Produtos",
+            "parameters": [
+               {
+                  "name": "nome_produto",
+                  "in": "header",
+                  "description": "varchar(100)",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "preco",
+                  "in": "header",
+                  "description": "float",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "id_categoria",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "id_fornecedor",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "id",
+                  "in": "header",
+                  "description": "int",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         },
+         "delete": {
+            "summary": "Delete Produtos",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "header",
+                  "description": "ID a ser deletado",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {}
+         }
+      },
+      "/login": {
+         "get": {
+            "summary": "get_Usuario",
+            "parameters": [
+               {
+                  "name": "login",
+                  "in": "header",
+                  "description": "varchar(100) - default: admin",
+                  "required": false,
+                  "type": "string",
+                  "default": "admin"
+               },
+               {
+                  "name": "senha",
+                  "in": "header",
+                  "description": "varchar(100) - default: wellinton",
+                  "required": false,
+                  "type": "string",
+                  "default": "wellinton"
+               }
+            ],
+            "responses": {}
+         }
+      }
+   }
+}
