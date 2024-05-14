@@ -5,6 +5,7 @@ const PutCidade = require('./put/putCidade');
 const PutEmpresas = require('./put/putEmpresas');
 const PutClientes = require('./put/putCliente');
 const PutClientesTelefone = require('./put/putClienteTelefone');
+const PutFormaPagamento = require('./put/putFormaPagamento');
 
 function CallbackPut() {
    PutCategoria();
@@ -14,6 +15,7 @@ function CallbackPut() {
    PutEmpresas();
    PutClientes();
    PutClientesTelefone();
+   PutFormaPagamento();
 }
 
 module.exports = { CallbackPut };
