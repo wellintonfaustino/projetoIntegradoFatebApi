@@ -6,6 +6,7 @@ const DeleteEmpresa = require('./delete/deleteEmpresas');
 const DeleteFormaPagamento = require('./delete/deleteFormaPagamento');
 const DeleteFornecedor = require('./delete/deleteFornecedores');
 const DeleteProduto = require('./delete/deleteProduto');
+const DeleteUsuarios = require('./delete/deleteUsuarios');
 
 function CallbackDelete() {
    DeleteCategoria();
@@ -16,6 +17,7 @@ function CallbackDelete() {
    DeleteClientes();
    DeleteClientesTelefone();
    DeleteFormaPagamento();
+   DeleteUsuarios();
 }
 
 module.exports = { CallbackDelete };
