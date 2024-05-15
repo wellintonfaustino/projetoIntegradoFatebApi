@@ -12,7 +12,8 @@ function GetUsuarios() {
          , perfil_usuario.nome_perfil as "perfil"
       from usuarios
      inner join perfil_usuario
-        on perfil_usuario.id  = usuarios.id_perfil_usuario  `,
+        on perfil_usuario.id  = usuarios.id_perfil_usuario
+     order by 1 `,
          (error, results) => {
             if (error) {
                console.error('Erro ao executar consulta:', error);

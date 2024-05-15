@@ -14,7 +14,7 @@ function PostUsuarios() {
       const con = mysqlConnection();
 
       con.query(
-         `INSERT INTO a.usuarios
+         `INSERT INTO usuarios
          (login, senha, id_perfil_usuario)
          VALUES(? , ? , ?); `,
          [login, senha, id_perfil_usuario],
