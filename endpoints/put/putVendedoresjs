@@ -1,0 +1,72 @@
+const { app } = require('../..');
+const { mysqlConnection } = require('../../mysql_con');
+
+function PutVendedores() {
+   app.put('/vendedores', (req, res) => {
+      const { id, cpf, endereco, nome_vendedor, id_usuario, id_empresa } =
+         req.headers;
+
+      if (!id) {
+         return res.status(400).json({
+            error: 'É necessário fornecer um id, nome e id categoria.',
+         });
+      }
+
+      // Construir a consulta SQL baseada nos campos não nulos
+      let query = 'UPDATE vendedor SET';
+      const values = [];
+
+      if (cpf) {
+         query += ' cpf = ?,';
+         values.push(cpf);
+      }
+
+      if (endereco) {
+         query += ' endereco = ?,';
+         values.push(endereco);
+      }
+
+      if (nome_vendedor) {
+         query += ' nome_vendedor = ?,';
+         values.push(nome_vendedor);
+      }
+
+      if (id_usuario) {
+         query += ' id_usuario = ?,';
+         values.push(id_usuario);
+      }
+
+      if (id_empresa) {
+         query += ' id_empresa = ?,';
+         values.push(id_empresa);
+      }
+
+      // Remover a última vírgula da consulta SQL
+      query = query.slice(0, -1);
+
+      // Adicionar a cláusula WHERE para atualizar apenas o fornecedor com o ID fornecido
+      query += ' WHERE id = ?';
+      values.push(id);
+
+      const con = mysqlConnection();
+
+      con.query(query, values, (error, results) => {
+         if (error) {
+            console.error('Erro ao executar consulta:', error);
+            return res.status(500).json({
+               error: 'Ocorreu um erro ao tentar atualizar o Vendedor.',
+            });
+         }
+
+         if (results.affectedRows === 0) {
+            return res.status(404).json({ error: 'Vendedor não encontrado.' });
+         }
+
+         res.json({ message: 'Vendedor atualizado com sucesso.' });
+      });
+      // Fechando a conexão com o MySQL
+      con.end();
+   });
+}
+
+module.exports = PutVendedores;

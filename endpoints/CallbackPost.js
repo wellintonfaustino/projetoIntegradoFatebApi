@@ -7,6 +7,7 @@ const PostFormaPagamento = require('./post/postFormaPagamento');
 const PostFornecedores = require('./post/postFornecedores');
 const PostProdutos = require('./post/postProdutos');
 const PostUsuarios = require('./post/postUsuarios');
+const PostVendedores = require('./post/postVendedores');
 
 function CallbackPost() {
    PostCategorias();
@@ -19,6 +20,7 @@ function CallbackPost() {
    PostClientesTelefone();
    PostFormaPagamento();
    PostUsuarios();
+   PostVendedores();
 }
 
 module.exports = { CallbackPost };

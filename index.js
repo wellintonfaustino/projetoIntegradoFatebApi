@@ -7,10 +7,10 @@ const cors = require('cors');
 app.use(cors()); // Habilita o CORS para todas as rotas
 
 //chama os endpoints
-const { CallbackGet } = require('./endpoints/callback_get');
-const { CallbackDelete } = require('./endpoints/callback_delete');
-const { CallbackPut } = require('./endpoints/callback_put');
-const { CallbackPost } = require('./endpoints/callback_post');
+const { CallbackGet } = require('./endpoints/CallbackGet');
+const { CallbackDelete } = require('./endpoints/CallbackDelete');
+const { CallbackPut } = require('./endpoints/CallbackPut');
+const { CallbackPost } = require('./endpoints/CallbackPost');
 CallbackGet();
 CallbackDelete();
 CallbackPost();

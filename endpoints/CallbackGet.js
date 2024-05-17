@@ -8,6 +8,7 @@ const { GetTodosClientes } = require('./get/getAllClientes');
 const { GetTodosClientesTelefone } = require('./get/getAllClientesTeefone');
 const GetTodasFormasPagamento = require('./get/getAllFormaPgamento');
 const GetUsuarios = require('./get/getAllUsuarios');
+const getTodosVendedores = require('./get/getAllVendedores');
 
 function CallbackGet() {
    GetLogin();
@@ -20,6 +21,7 @@ function CallbackGet() {
    GetTodosClientesTelefone();
    GetTodasFormasPagamento();
    GetUsuarios();
+   getTodosVendedores();
 }
 
 module.exports = { CallbackGet };
